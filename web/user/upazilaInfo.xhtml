@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    
+    
+    <ui:composition template="/Theme/newTemplate.xhtml">
+        <ui:define name="top">
+            <ui:include src="link.xhtml"></ui:include>
+     
+        </ui:define>
+        
+        <ui:define name="content">
+
+            <h:form>
+
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Upazila name"></p:outputLabel>
+                    <p:inputText value="#{upazilaInfoBean.u.uzname}"/>
+
+                   <p:outputLabel value="District Name"></p:outputLabel>
+                   <p:selectOneMenu value="#{upazilaInfoBean.u.disId}" >
+                       <f:selectItems value="#{upazilaInfoBean.districtInfoList}"></f:selectItems>
+                     </p:selectOneMenu>
+
+                   <p:commandButton value="Submit" action="#{upazilaInfoBean.insertUpazila()}"/>
+
+
+
+                </h:panelGrid>
+
+            </h:form>
+
+
+                <h:form>
+
+                    <p:dataTable var="car" value="#{upazilaInfoBean.uii.upazilaInfo}">
+                        <p:column headerText="Upazila Id">
+                            <h:outputText value="#{car.uzid}" />
+                        </p:column>
+
+                        <p:column headerText="District Id">
+                            <h:outputText value="#{car.disId}" />
+                        </p:column>
+
+                       <p:column headerText="UpaZila">
+                           <h:outputText value="#{car.uzname}" />
+                        </p:column>
+
+                        
+                    </p:dataTable> 
+                </h:form>
+        </ui:define>
+        
+    </ui:composition>
+   
+</html>
+

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    
+    
+    <ui:composition template="/Theme/newTemplate.xhtml">
+       
+        <ui:define name="top">
+            <!--<ui:include src="link.xhtml"></ui:include>-->
+            
+            
+        </ui:define>
+        <ui:define name="content">
+
+           <h:form>
+            <h2>Route Details CRUD</h2>
+            Route Details ID :<h:inputText value="#{launch_Route_DetailsController.route_Details.route_del_id}"/>
+            Route Details Name :<h:inputText value="#{launch_Route_DetailsController.route_Details.route_del_name}"/>
+            <h:commandButton value="Add Type" action="#{launch_Route_DetailsController.insert()}"/>
+        </h:form>
+        
+        <h:form>
+
+            <p:dataTable var="r_detail" value="#{launch_Route_DetailsController.allRoute_Details}">
+                <p:column headerText="Type Id">
+                    <h:outputText value="#{r_detail.route_del_id}" />
+                </p:column>
+
+                <p:column headerText="Type Name">
+                    <h:outputText value="#{r_detail.route_del_name}" />
+                </p:column>
+                <p:column headerText="Delete">
+                    <h:commandButton value="Delete" action="#{launch_Route_DetailsController.delete(r_detail.route_del_id)}" >                       
+                    </h:commandButton>
+                </p:column>
+
+            </p:dataTable> 
+        </h:form>            
+        </ui:define>
+        
+    </ui:composition>
+   
+</html>
+

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head> 
+    <ui:composition template="/Theme/newTemplate.xhtml">
+
+        <ui:define name="content">
+            <h:form>            
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Depart From :" />
+                    <p:inputText value="#{launchTimeScheduleController.launch_TimeSchedule.departFrom}"/>
+                    <h:outputLabel value="Arrival To :" /> 
+                    <p:inputText value="#{launchTimeScheduleController.launch_TimeSchedule.arriveTo}"/>
+                    <h:outputLabel value="Depart Time  :" />     
+                    <p:calendar  value="#{launchTimeScheduleController.launch_TimeSchedule.deptTime}" pattern="HH:mm a" timeOnly="true"  />
+                    <h:outputLabel value="Arrival Time  :" />     
+
+                    <p:calendar  value="#{launchTimeScheduleController.launch_TimeSchedule.arrivTime}" pattern="HH:mm a" timeOnly="true"  />
+
+                    <p:outputLabel value="Launch Name"></p:outputLabel>
+
+                    <p:selectOneMenu value="#{launchTimeScheduleController.launch_TimeSchedule.launchId}" >
+                        <f:selectItems value="#{launch_InfoController.allLaunchInfoList}"></f:selectItems>
+                    </p:selectOneMenu>
+
+                </h:panelGrid>                
+                <p:commandLink value="Submit" action="#{launchTimeScheduleController.insert()}"/>
+            </h:form>  
+
+
+            <h:form>
+                <p:dataTable var="launch" value="#{launchTimeScheduleController.allLaunchTimeForDispalyList}">
+
+                    
+                     <p:column headerText="">
+                        <h:outputText value="#{launch.launchName}" />
+                    </p:column>
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.departFrom}" />
+                    </p:column>
+
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.arriveTo}" />
+                    </p:column>
+
+                   
+
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.deptTime}" />
+                    </p:column>
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.arrivTime}" />
+                    </p:column>
+                </p:dataTable>   
+            </h:form>
+
+        </ui:define>       
+    </ui:composition>
+</html>
+

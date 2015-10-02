@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+
+
+    <ui:composition template="/Theme/newTemplate.xhtml">
+
+        <ui:define name="top">
+            <ui:include src="link.xhtml"></ui:include>
+
+
+        </ui:define>
+        <ui:define name="content">
+
+            <h:form>
+                <h:panelGrid columns="4">
+                    <p:outputLabel value=" User Name"/>
+                    <p:inputText value="#{userInfoControl.userInfo.uname}">
+                        <p:ajax event="keyup" update="out1" listener="#{userInfoControl.nameCheck()}"/>                   
+                    </p:inputText><br/>
+                    <h:outputText id="out1" value="#{userInfoControl.msg}" />
+                    </h:panelGrid>
+                    <h:panelGrid columns="2">
+                    Password :<p:inputText value="#{userInfoControl.userInfo.pass}"/><br/>
+
+                    Mobile No:<p:inputText value="#{userInfoControl.userInfo.mobileNo}"/><br/>
+                    Secret Question :<p:inputText value="#{userInfoControl.userInfo.secQuestion}"/><br/>
+                    Secret Question Answer :<p:inputText value="#{userInfoControl.userInfo.secAnswer}"/><br/> 
+                    <p:outputLabel></p:outputLabel>
+                    <p:outputLabel value="User Info"></p:outputLabel>
+                    <p:selectOneMenu value="#{userInfoControl.userInfo.userRoleId}" >
+                        <f:selectItems value="#{userRoleControl.userRoleList}"></f:selectItems>
+                    </p:selectOneMenu>
+
+
+                    <p:commandButton value="Submit" action="#{userInfoControl.insert()}" />
+
+                </h:panelGrid>
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
+
+</html>
+

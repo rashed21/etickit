@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head> 
+    <ui:composition template="/Theme/newTemplate.xhtml">
+
+        <ui:define name="content">
+            <h:form>
+                <p:dataTable var="launch" value="#{launchSalseSeatController.viewAllSeatsOnSearch()}">       
+                     <p:column headerText="Tras. Name">
+                        <h:outputText value="#{launch.launchName}" />
+                    </p:column>
+                    <p:column headerText="Dep. From">
+                        <h:outputText value="#{launch.departFrom}" />
+                    </p:column>
+
+                    <p:column headerText="Arr. To">
+                        <h:outputText value="#{launch.arriveTo}" />
+                    </p:column>                  
+
+                    <p:column headerText="Dep. Time">
+                        <h:outputText value="#{launch.deptTime}" />
+                    </p:column>
+                    <p:column headerText="Arr. Time">
+                        <h:outputText value="#{launch.arrivTime}" />
+                    </p:column>
+                   <p:column headerText="Fair">
+                       <h:outputText value="#{launch.fair}" />
+                    </p:column>
+                    
+                    <p:column headerText="Seats. Name">
+                        <h:outputText value="#{launch.seatName}" />
+                    </p:column>
+                    
+                      <p:column headerText="Type">
+                          <h:outputText value="#{launch.typeName}" />
+                    </p:column>
+                    
+                    <p:column headerText="Catagory">
+                        <h:outputText value="#{launch.seatCataName}" />
+                    </p:column>
+                </p:dataTable>   
+            </h:form>
+
+            
+             <h:form>
+    <p:growl id="msgs" showDetail="true" />
+ 
+    <p:panel header="Select Deck/Cabin" style="margin-bottom:10px;">
+      
+        
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:outputLabel  value="Seat Type " />
+          
+            
+            <p:selectOneMenu value="#{launchSeatCatagoryController.launchSeatType.seatTypeID}" style="width:150px">
+                <p:ajax listener="#{launchSeatCatagoryController.viewChangeOnSelect}" update="city" />
+                <f:selectItem itemLabel="Pick Your Type" itemValue="" noSelectionOption="true" />
+                <f:selectItems value="#{launchSeatTypeController.allLaunchSeatType}" />
+            </p:selectOneMenu>
+         
+            <p:outputLabel for="city" value="Seat Catagory: " />
+            <p:selectOneMenu id="city" value="#{launchSalseSeatController.launchAvailableSeat.seatCataID}" style="width:150px">
+                <f:selectItem itemLabel="Select Catagory" itemValue="" noSelectionOption="true" />
+                <f:selectItems value="#{launchSeatCatagoryController.seatCatagoryOnSelect}" />
+            </p:selectOneMenu>
+            
+          
+            <p:outputLabel  value="Number of Seats :" />
+            <p:selectOneMenu value="#{launchSalseSeatController.numberOFSeatForSeals}" style="width:150px">
+                <f:selectItem itemLabel="Pick No" itemValue="" noSelectionOption="true" />
+                  
+                <f:selectItem itemLabel="1" itemValue="1" />
+                 <f:selectItem itemLabel="2" itemValue="2" />
+                  <f:selectItem itemLabel="4" itemValue="4" />
+            </p:selectOneMenu> 
+            
+            
+            
+            <p:commandButton value="Submit" action="#{launchSalseSeatController.insertSalseSeat()}">
+                <f:setPropertyActionListener target="#{launchSalseSeatController.launchAvailableSeat.seatTypeID}" value="#{launchSeatCatagoryController.holdSeatCataID}"/>
+            </p:commandButton>
+            
+            
+           
+            
+            
+        </h:panelGrid>
+        <p:separator/>       
+    </p:panel>
+</h:form>
+                
+                
+                
+          
+            
+            
+            
+        </ui:define>       
+    </ui:composition>
+</html>
+
+
+

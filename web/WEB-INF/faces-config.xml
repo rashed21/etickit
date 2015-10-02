@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+  
+  <managed-bean>
+    <managed-bean-name>routeCRUD</managed-bean-name>
+    <managed-bean-class>ticket.com.controlloer.RouteCRUD</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+  
+  <managed-bean>
+    <managed-bean-name>busTypeCRUD</managed-bean-name>
+    <managed-bean-class>ticket.com.controlloer.BusTypeCRUD</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean> 
+  
+  
+  <managed-bean>
+    <managed-bean-name>route_DetailsCRUD</managed-bean-name>
+    <managed-bean-class>ticket.com.controlloer.Route_DetailsCRUD</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean> 
+  
+   <managed-bean>
+    <managed-bean-name>userRoleControl</managed-bean-name>
+    <managed-bean-class>ticket.com.controlloer.UserRoleControl</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean> 
+  
+  
+  
+  
+    <managed-bean>
+        <managed-bean-name>companyBean</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.CompanyInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>busInfoBean</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.BusInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+   <managed-bean>
+        <managed-bean-name>userInfoControl</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.UserInfoControl</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    
+   <managed-bean>
+        <managed-bean-name>busTimeScheduleControl</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.BusTimeScheduleControl</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+     <managed-bean>
+        <managed-bean-name>userModuleController</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.UserModuleController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>boardingAreaControl</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.BoardingAreaControl</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+     <managed-bean>
+        <managed-bean-name>divisionInfoBean</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.DivisionInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+  
+  
+    <managed-bean>
+        <managed-bean-name>districtInfoBean</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.DistrictInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>upazilaInfoBean</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.UpazilaInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>unionInfoBean</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.UnionInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+     <managed-bean>
+        <managed-bean-name>wardInfoBean</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.WardInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>villageInfoControl</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.VillageInfoControl</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+     <managed-bean>
+        <managed-bean-name>userAccessModuleControl</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.UserAccessModuleControl</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+  <managed-bean>
+        <managed-bean-name>sealsControl</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.SealsControl</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>reportGenerate</managed-bean-name>
+        <managed-bean-class>ticket.com.controlloer.ReportGenerate</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    
+  <!--beans for launch
+    
+ ##########################################################################################################################  
+    -->  
+     <managed-bean>
+        <managed-bean-name>lauch_Route</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.Lauch_Route</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+     <managed-bean>
+        <managed-bean-name>launch_Route_DetailsController</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.Launch_Route_DetailsController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    Launch_CompanyInfoController
+    
+    
+    
+    <managed-bean>
+        <managed-bean-name>launch_CompanyInfoController</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.Launch_CompanyInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>launch_InfoController</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.Launch_InfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>launchTimeScheduleController</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.LaunchTimeScheduleController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>launchBoardingAreaControl</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.LaunchBoardingAreaControl</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>launchSeatCatagoryController</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.LaunchSeatCatagoryController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>launchSeatTypeController</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.LaunchSeatTypeController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>launchAvailableSeatController</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.LaunchAvailableSeatController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    
+    
+    <managed-bean>
+        <managed-bean-name>launchSalseSeatController</managed-bean-name>
+        <managed-bean-class>ticket.com.launch.controlloer.LaunchSalseSeatController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    
+    
+    //Faces_Congig for cinema///////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    
+    
+    
+    
+    
+    <managed-bean>
+        <managed-bean-name>hallInfoController</managed-bean-name>
+        <managed-bean-class>ticket.com.cinema.controlloer.HallInfoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+     <managed-bean>
+        <managed-bean-name>hallSeatCatagoryController</managed-bean-name>
+        <managed-bean-class>ticket.com.cinema.controlloer.HallSeatCatagoryController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+     <managed-bean>
+        <managed-bean-name>showOnHallAndSeatsController</managed-bean-name>
+        <managed-bean-class>ticket.com.cinema.controlloer.ShowOnHallAndSeatsController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+    
+     <managed-bean>
+        <managed-bean-name>cinemaController</managed-bean-name>
+        <managed-bean-class>ticket.com.cinema.controlloer.CinemaController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+  
+       <managed-bean>
+        <managed-bean-name>showTimeController</managed-bean-name>
+        <managed-bean-class>ticket.com.cinema.controlloer.ShowTimeController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+     <managed-bean>
+        <managed-bean-name>SeatsOnHallController</managed-bean-name>
+        <managed-bean-class>ticket.com.cinema.controlloer.SeatsOnHallController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    ShowCatagoryController
+    
+      <managed-bean>
+        <managed-bean-name>showCatagoryController</managed-bean-name>
+        <managed-bean-class>ticket.com.cinema.controlloer.ShowCatagoryController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+</faces-config>

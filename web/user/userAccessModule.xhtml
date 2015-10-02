@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    
+    
+    <ui:composition template="/Theme/newTemplate.xhtml">
+       
+        <ui:define name="top">
+            <ui:include src="link.xhtml"></ui:include>
+            
+            
+        </ui:define>
+        <ui:define name="content">
+
+          <h:form>
+              <h:panelGrid columns="2">
+                   <p:outputLabel value="User Role"></p:outputLabel>
+                   <p:selectOneMenu value="#{userAccessModuleControl.userAccessModule.userRole}" >
+                        <f:selectItems value="#{userRoleControl.userRoleList}"></f:selectItems>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="User Module"></p:outputLabel>
+                   <p:selectOneMenu value="#{userAccessModuleControl.userAccessModule.userModule}" >
+                       <f:selectItems value="#{userModuleController.allModuleList}"></f:selectItems>
+                    </p:selectOneMenu>
+                    <h:commandButton value="Submit" action="#{userAccessModuleControl.insert()}"/>
+          </h:panelGrid>    
+          </h:form>
+            
+
+        
+
+              
+        </ui:define>
+        
+    </ui:composition>
+   
+</html>
+
+
+

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    
+    
+    <ui:composition template="/Theme/newTemplate.xhtml">
+       
+        <ui:define name="top">
+            <ui:include src="link.xhtml"></ui:include>
+            
+            
+        </ui:define>
+        <ui:define name="content">
+
+            <h:form>
+
+                <p:dataTable value="#{busTimeScheduleControl.availableSeatsBus}" var="data">
+            
+               <p:column headerText="Bus Type">
+                   <h:outputText value="#{data.bus_type_name}" />
+                 </p:column>
+
+            <p:column headerText="Journy">
+                <h:outputText value="#{data.departFrom} - #{data.arriveTo}"/>
+                 </p:column>        
+                    
+               <p:column headerText="Depart Time">
+                   <h:outputText value="#{data.deptTime}" />
+                 </p:column>
+            
+                <p:column headerText="Arrival Time">
+                    <h:outputText value="#{data.arrivTime}" />
+                 </p:column>
+            
+                <p:column headerText="Seat Available">
+                    <h:outputText value="#{data.totSeatNo}" />
+                 </p:column>
+            <p:column headerText="Amount">
+                <h:outputText value="#{data.value}" />
+                 </p:column>
+                  
+                     <p:column headerText="Action">
+                         <h:commandButton value="bye Ticket" action="SelectForSeal?faces-redirect=true">
+                             <f:setPropertyActionListener target="#{sealsControl.busTimeSchedule.busTimeId}" value="#{data.busTimeId}"/>
+                         </h:commandButton>
+                        
+                 </p:column>
+                    
+            </p:dataTable>
+            </h:form>   
+        </ui:define>
+        
+    </ui:composition>
+   
+</html>
+

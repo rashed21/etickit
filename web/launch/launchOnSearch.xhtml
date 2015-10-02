@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head> 
+    <ui:composition template="/Theme/newTemplate.xhtml">
+
+        <ui:define name="content">
+            <h:form>
+                <p:dataTable var="launch" value="#{launchSalseSeatController.search()}">
+
+                    
+                    
+                    
+                     <p:column headerText="">
+                        <h:outputText value="#{launch.launchName}" />
+                    </p:column>
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.departFrom}" />
+                    </p:column>
+
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.arriveTo}" />
+                    </p:column>
+
+                   
+
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.deptTime}" />
+                    </p:column>
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.arrivTime}" />
+                    </p:column>
+                    <p:column headerText="">
+                         <p:commandButton value=" Buy" action="launchSeatSelect?faces-redirect=true">
+                             <f:setPropertyActionListener target="#{launchSalseSeatController.launch_TimeSchedule.launchTimeId}" value="#{launch.launchTimeId}"/>
+           
+                        </p:commandButton>
+                    </p:column>
+                </p:dataTable>   
+            </h:form>
+
+        </ui:define>       
+    </ui:composition>
+</html>
+
+
+

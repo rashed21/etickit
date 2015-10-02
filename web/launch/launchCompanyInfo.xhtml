@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    
+    
+    <ui:composition template="/Theme/newTemplate.xhtml">
+        <ui:define name="top">
+<!--            <ui:include src="link.xhtml"></ui:include>-->
+     
+        </ui:define>
+        
+        <ui:define name="content">
+
+            <h:form>
+
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Company name"></p:outputLabel>
+                    <p:inputText value="#{launch_CompanyInfoController.ci.companyName}"/>
+
+                    <p:outputLabel value="Head Office"></p:outputLabel>
+                    <p:inputText value="#{launch_CompanyInfoController.ci.headOffice}"/>
+
+                    <p:outputLabel value="Contact Person"></p:outputLabel>
+                    <p:inputText value="#{launch_CompanyInfoController.ci.contactPerson}"/>
+
+                    <p:outputLabel value="Contact Number"></p:outputLabel>
+                    <p:inputText value="#{launch_CompanyInfoController.ci.contactNo}"/>
+
+                    <p:commandButton value="Submit" action="#{launch_CompanyInfoController.insert()}"/>
+
+
+
+                </h:panelGrid>
+
+            </h:form>
+
+
+                <h:form>
+
+                    <p:dataTable var="car" value="#{companyBean.ci.companyinfo}">
+                        <p:column headerText="Company Id">
+                            <h:outputText value="#{car.companyId}" />
+                        </p:column>
+
+                        <p:column headerText="Company Name">
+                            <h:outputText value="#{car.companyName}" />
+                        </p:column>
+
+                        <p:column headerText="Head office ">
+                            <h:outputText value="#{car.headOffice}" />
+                        </p:column>
+
+                        <p:column headerText="Contact person">
+                            <h:outputText value="#{car.contactPerson}" />
+                        </p:column>
+
+
+                        <p:column headerText="Contact number">
+                            <h:outputText value="#{car.contactNo}" />
+                        </p:column>
+                    </p:dataTable> 
+                </h:form>
+        </ui:define>
+        
+    </ui:composition>
+   
+</html>
+

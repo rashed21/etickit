@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+<ui:composition template="/Theme/newTemplate.xhtml">   
+        <ui:define name="top">
+            <ui:include src="link.xhtml"></ui:include>   
+        </ui:define>
+    <ui:define name="content">
+        <h:form>
+         
+            Select Hall:
+                 <p:selectOneMenu value="#{showTimeController.showTime.hallId}" >
+                <f:selectItems value="#{hallInfoController.hallInfoImplDao.hallInfListForListItems}"></f:selectItems>
+                     </p:selectOneMenu>  
+            Show Time :<h:inputText value="#{showTimeController.showTime.showTimeinHour}"/>  <br/>  
+            Show Title: <h:inputText value="#{showTimeController.showTime.title}"/>  <br/>  
+           
+            <h:commandButton value="Add Type" action="#{showTimeController.insert()}"/>
+        </h:form>
+        
+        <h:form>
+
+            <p:dataTable var="show" value="#{showTimeController.showTimeImplDao.allShowTimeList}">
+                <p:column headerText="Hall Name">
+                    <h:outputText value="#{show.hallName}" />
+                </p:column>
+
+                <p:column headerText="Hall Location">
+                    <h:outputText value="#{show.showTimeinHour}" />
+                </p:column>
+
+                   <p:column headerText="Hall Details">
+                       <h:outputText value="#{show.title}" />
+                </p:column>
+
+               
+
+               
+            </p:dataTable> 
+        </h:form>
+
+   </ui:define>
+        
+    </ui:composition>
+</html>
+

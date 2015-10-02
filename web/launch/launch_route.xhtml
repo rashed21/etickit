@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    
+    
+    <ui:composition template="/Theme/newTemplate.xhtml">
+       
+        <ui:define name="top">
+<!--            <ui:include src="link.xhtml"></ui:include>-->
+            
+            
+        </ui:define>
+        <ui:define name="content">
+
+          <h:form>
+              Route Name: <h:inputText value="#{lauch_Route.route.route_name}"></h:inputText>
+                   
+                    <h:commandButton value="Submit" action="#{lauch_Route.insert()}"/>
+                </h:form>
+            <h:form>
+
+            <p:dataTable var="route" value="#{lauch_Route.allRoute}">
+                <p:column headerText="Route Id">
+                    <h:outputText value="#{route.route_id}" />
+                </p:column>
+
+                <p:column headerText="Route Name">
+                    <h:outputText value="#{route.route_name}" />
+                </p:column>
+
+                <p:column headerText="Status ">
+                    <c:choose>
+                        <c:when test="#{route.status.equalsIgnoreCase('A')}">
+                                <h:outputLabel value="Inactive"/>
+                        </c:when>
+                        <c:otherwise>
+                              <h:outputLabel value="Active"/>
+                        </c:otherwise>
+                    </c:choose>   
+                </p:column>
+
+                <p:column headerText="Delete">
+                    <h:commandButton value="Delete" action="#{lauch_Route.delete(route.route_id)}" >
+
+                        
+                    </h:commandButton>
+                </p:column>
+
+
+                <p:column headerText="Edit">
+                    <p:commandButton value="Update" type="button" onclick="PF('dlg3').show();" />                   
+                </p:column>
+            </p:dataTable> 
+        </h:form>
+
+<p:dialog header="Update" widgetVar="dlg3" showEffect="explode" hideEffect="fold" height="200" width="360">
+                        <h:form>
+                            <h:panelGrid columns="2">
+                                <p:outputLabel value="Route ID"/>
+                                <p:inputText value="#{route.route_id}"></p:inputText>
+                                <p:outputLabel value="Route Name"/>
+                                <p:inputText value="#{lauch_Route.route.route_name}" />
+                                <p:commandButton type="submit" value="Update" action="#{lauch_Route.update(route.route_id)}" ajax="false">
+                                </p:commandButton>
+                            </h:panelGrid>
+                        </h:form>
+                    </p:dialog>
+        </ui:define>
+        
+        
+    </ui:composition>
+   
+</html>
+
+
+

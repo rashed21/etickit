@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+  
+    </h:head>
+    
+    <ui:composition template="./../Theme/newTemplate.xhtml">
+    
+       
+        <ui:define name="top">
+            <ui:include src="link.xhtml"></ui:include>           
+        </ui:define>
+        <ui:define name="content">
+            <h:form>
+  <center>
+      <br/><br/><br/>
+             <ui:repeat value="#{sealsControl.totalSeatName}" var="seat">
+          
+                 <p:commandButton value="#{seat.first}" action="#{sealsControl.allSetectedSeat()}" style="height: 35px;width: 55px">
+                     
+                     <f:setPropertyActionListener target="#{sealsControl.sealsInfo.selectedSeat}" value="#{seat.first}" />
+                     
+                 </p:commandButton> 
+                 <p:commandButton value="#{seat.second}" action="#{sealsControl.allSetectedSeat()}" style="height: 35px;width: 55px">
+                     <f:setPropertyActionListener target="#{sealsControl.sealsInfo.selectedSeat}" value="#{seat.second}"/>
+                 </p:commandButton>
+                 &nbsp;
+                 <p:commandButton value="#{seat.third}" action="#{sealsControl.allSetectedSeat()}" style="height: 35px;width: 55px">
+                     <f:setPropertyActionListener target="#{sealsControl.sealsInfo.selectedSeat}" value="#{seat.third}"/>
+                 </p:commandButton>
+                 
+                 <p:commandButton value="#{seat.fourth}" action="#{sealsControl.allSetectedSeat()}" style="height: 35px;width: 55px">
+                     <f:setPropertyActionListener target="#{sealsControl.sealsInfo.selectedSeat}" value="#{seat.fourth}"/>
+                 
+                 </p:commandButton><br/>
+         
+        </ui:repeat>
+            
+         </center>
+          <br/><br/>
+          
+          <p:dataTable var="st" value="#{sealsControl.getsSelectedSeatList()}" >
+                        <p:column headerText="Seat Name">
+                            <h:outputText value="#{st.selectedSeat}" />
+                        </p:column>
+                        <p:column headerText="Price">
+                            <h:outputText value="#{sealsControl.totalvalue}" />
+                        </p:column>
+                       
+                        <p:column headerText="Action">
+                            <p:commandButton value="Buy" action="#{sealsControl.sealsSeat()}"/>
+                        </p:column>
+                
+                    </p:dataTable> 
+            </h:form>
+               
+        </ui:define>
+  
+    </ui:composition>
+   
+</html>
+

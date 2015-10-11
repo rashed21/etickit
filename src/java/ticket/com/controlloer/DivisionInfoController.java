@@ -1,3 +1,6 @@
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,6 +8,7 @@
  */
 package ticket.com.controlloer;
 
+import java.util.List;
 import ticket.com.implDao.DivisionInfoImpl;
 import ticket.com.pojo.Divisioninfo;
 
@@ -44,4 +48,16 @@ public class DivisionInfoController {
     }
     
     
+  public List<Divisioninfo> getDivisionInfo(){
+  
+  return divisionInfoImpl.getDivisionInfo();
+  }   
+      
+      public void delete(int i){
+       
+       divisionInfoImpl.delete(i);
+    }  
+      
+      
+      
 }

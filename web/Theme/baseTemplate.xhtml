@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Bootstrap Case</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../resources/css/datepicker.css"/>
+        <script src="../resources/js/bootstrap-datepicker.js"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <script>
+            $(function(){
+                $('.datepicker').datepicker();
+            });
+            
+            
+        </script>   
+        
+        
+   <script>
+$(document).ready(function(){
+    
+    $("#division_div_button").click(function(){
+	document.getElementById("division_div").className = "show";
+	document.getElementById("user_role_div").className = "hidden";
+        document.getElementById("module_div").className = "hidden";
+        document.getElementById("district_div").className = "hidden";
+        document.getElementById("upazila_div").className = "hidden";
+         document.getElementById("union_div").className = "hidden";
+         document.getElementById("bus_route_div").className = "hidden";
+                document.getElementById("bus_route_details_div").className = "hidden";
+
+                         document.getElementById("bus_boarding_div").className = "hidden";
+                         document.getElementById("bus_seats_allocation_div").className = "hidden";
+   
+       
+    });
+    
+     $("#user_role_button").click(function(){
+         document.getElementById("user_role_div").className = "show";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("module_div").className = "hidden";	
+        document.getElementById("district_div").className = "hidden";
+        document.getElementById("upazila_div").className = "hidden";
+         document.getElementById("union_div").className = "hidden";
+         document.getElementById("bus_route_div").className = "hidden";
+                document.getElementById("bus_route_details_div").className = "hidden";
+
+                         document.getElementById("bus_boarding_div").className = "hidden";
+                         document.getElementById("bus_seats_allocation_div").className = "hidden";
+  
+    });
+    
+    $("#module_button").click(function(){
+        document.getElementById("module_div").className = "show";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("user_role_div").className = "hidden";	
+        document.getElementById("district_div").className = "hidden";
+       document.getElementById("upazila_div").className = "hidden";
+        document.getElementById("union_div").className = "hidden";
+        document.getElementById("bus_route_div").className = "hidden";
+               document.getElementById("bus_route_details_div").className = "hidden";
+                    document.getElementById("bus_boarding_div").className = "hidden";
+                    document.getElementById("bus_seats_allocation_div").className = "hidden";
+
+    });
+    $("#district_div_button").click(function(){
+        document.getElementById("district_div").className = "show";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("user_role_div").className = "hidden";
+	document.getElementById("module_div").className = "hidden"; 
+         document.getElementById("upazila_div").className = "hidden";
+        document.getElementById("union_div").className = "hidden";
+        document.getElementById("bus_route_div").className = "hidden";
+               document.getElementById("bus_route_details_div").className = "hidden";
+                    document.getElementById("bus_boarding_div").className = "hidden";
+                    document.getElementById("bus_seats_allocation_div").className = "hidden";
+
+    });
+    
+     $("#upazila_div_button").click(function(){
+         document.getElementById("upazila_div").className = "show";
+        document.getElementById("district_div").className = "hidden";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("user_role_div").className = "hidden";
+	document.getElementById("module_div").className = "hidden";
+        document.getElementById("union_div").className = "hidden";
+         document.getElementById("bus_route_div").className = "hidden";
+                document.getElementById("bus_route_details_div").className = "hidden";
+
+                    document.getElementById("bus_boarding_div").className = "hidden";
+                    document.getElementById("bus_seats_allocation_div").className = "hidden";
+
+        
+       
+    });
+    
+     $("#union_div_button").click(function(){
+         document.getElementById("union_div").className = "show";
+         document.getElementById("upazila_div").className = "hidden";
+        document.getElementById("district_div").className = "hidden";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("user_role_div").className = "hidden";
+	document.getElementById("module_div").className = "hidden";
+        document.getElementById("bus_route_div").className = "hidden";
+               document.getElementById("bus_route_details_div").className = "hidden";
+
+                    document.getElementById("bus_boarding_div").className = "hidden";
+                    document.getElementById("bus_seats_allocation_div").className = "hidden";
+
+        
+       
+    });
+    
+    $("#bus_route_button").click(function(){
+        document.getElementById("bus_route_div").className = "show";
+         document.getElementById("union_div").className = "hidden";
+         document.getElementById("upazila_div").className = "hidden";
+        document.getElementById("district_div").className = "hidden";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("user_role_div").className = "hidden";
+	document.getElementById("module_div").className = "hidden";   
+       document.getElementById("bus_route_details_div").className = "hidden";
+                           document.getElementById("bus_boarding_div").className = "hidden";
+                           document.getElementById("bus_seats_allocation_div").className = "hidden";
+
+
+    });
+    
+     $("#bus_route_details_button").click(function(){
+          document.getElementById("bus_route_details_div").className = "show";
+        document.getElementById("bus_route_div").className = "hidden";
+         document.getElementById("union_div").className = "hidden";
+         document.getElementById("upazila_div").className = "hidden";
+        document.getElementById("district_div").className = "hidden";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("user_role_div").className = "hidden";
+	document.getElementById("module_div").className = "hidden"; 
+           document.getElementById("bus_boarding_div").className = "hidden";
+          document.getElementById("bus_seats_allocation_div").className = "hidden";
+
+
+    });
+    
+       $("#bus_boarding_button").click(function(){
+            document.getElementById("bus_boarding_div").className = "show";
+         
+          document.getElementById("bus_route_details_div").className = "hidden";
+        document.getElementById("bus_route_div").className = "hidden";
+         document.getElementById("union_div").className = "hidden";
+         document.getElementById("upazila_div").className = "hidden";
+        document.getElementById("district_div").className = "hidden";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("user_role_div").className = "hidden";
+	document.getElementById("module_div").className = "hidden"; 
+                 document.getElementById("bus_seats_allocation_div").className = "hidden";
+
+    });
+    
+      $("#bus_seats_allocation_button").click(function(){
+         document.getElementById("bus_seats_allocation_div").className = "show";
+        document.getElementById("bus_boarding_div").className = "hidden";         
+        document.getElementById("bus_route_details_div").className = "hidden";
+        document.getElementById("bus_route_div").className = "hidden";
+         document.getElementById("union_div").className = "hidden";
+         document.getElementById("upazila_div").className = "hidden";
+        document.getElementById("district_div").className = "hidden";
+	document.getElementById("division_div").className = "hidden";
+        document.getElementById("user_role_div").className = "hidden";
+	document.getElementById("module_div").className = "hidden"; 
+    });
+    
+});
+</script>
+
+    </h:head>
+
+    <h:body>
+
+
+
+
+        <div class="container">
+            <h2>E-Ticketing System......</h2>
+            <div class="panel panel-default">
+
+                <div class="panel-heading"><ui:insert name="header"><nav class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                                        data-target="#example-navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="../userPanel/index.xhtml">Home</a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="../bus/searchBus.xhtml">Bus</a></li>
+                                    <li><a href="../launch/launchSearch.xhtml">Lunch</a></li>
+                                    <li><a href="#">Cinema</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            Others <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Hotel</a></li>
+                                            <li><a href="#">Rent</a></li>
+                                            <li><a href="#">Games</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Fantasy</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="../userPanel/agent.xhtml">Agent Manage</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav></ui:insert></div>
+
+                <div class="panel-body"><ui:insert name="content"><div class="row">
+                            <div class="col-md-3"><ui:insert name="content_left">Left panel</ui:insert></div>
+                            <div class="col-md-9"><ui:insert name="content_main">Left Main</ui:insert></div>
+                        </div></ui:insert></div>
+                <div class="panel-footer"><ui:insert name="footer">Panel Footer</ui:insert></div>
+            </div>
+        </div>
+    </h:body>
+
+</html>

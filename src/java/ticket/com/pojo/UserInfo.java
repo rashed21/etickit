@@ -24,6 +24,12 @@ public class UserInfo  implements java.io.Serializable {
      private Date regDate;
      private String isactivea;
     private Integer userRoleId;
+    private Integer addressId;
+    private String name;
+    private String email;
+    private String presentAddress;
+    private String gender;
+    
 
     public Integer getUserRoleId() {
         return userRoleId;
@@ -38,15 +44,66 @@ public class UserInfo  implements java.io.Serializable {
     public UserInfo() {
     }
 
-    public UserInfo(Integer userRole, String uname, String pass, String mobileNo, String secQuestion, String secAnswer, Date regDate, String isactivea) {
-       this.userRole = userRole;
-       this.uname = uname;
-       this.pass = pass;
-       this.mobileNo = mobileNo;
-       this.secQuestion = secQuestion;
-       this.secAnswer = secAnswer;
-       this.regDate = regDate;
-       this.isactivea = isactivea;
+    public UserInfo(Integer userId, Integer userRole, String uname, String pass, String mobileNo, String secQuestion, String secAnswer, Date regDate, String isactivea, Integer userRoleId, Integer addressId, String name, String email, String presentAddress, String gender) {
+        this.userId = userId;
+        this.userRole = userRole;
+        this.uname = uname;
+        this.pass = pass;
+        this.mobileNo = mobileNo;
+        this.secQuestion = secQuestion;
+        this.secAnswer = secAnswer;
+        this.regDate = regDate;
+        this.isactivea = isactivea;
+        this.userRoleId = userRoleId;
+        this.addressId = addressId;
+        this.name = name;
+        this.email = email;
+        this.presentAddress = presentAddress;
+        this.gender = gender;
+    }
+
+  
+
+    public Integer getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPresentAddress() {
+        return presentAddress;
+    }
+
+    public void setPresentAddress(String presentAddress) {
+        this.presentAddress = presentAddress;
+    }
+
+ 
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
    
     public Integer getUserId() {

@@ -27,7 +27,8 @@ public class DBConnectionHandler {
             Logger.getLogger(DBConnectionHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/ticket", "root", "123");//mysql database
+       con = (Connection) DriverManager.getConnection("jdbc:mysql://127.4.21.130:3306/ticket", "adminrpb8ac9", "NIqAX44vxl7Y");//mysql database
+ // con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/ticket", "root", "123");//mysql database
 
         } catch (SQLException ex) {
             Logger.getLogger(DBConnectionHandler.class.getName()).log(Level.SEVERE, null, ex);

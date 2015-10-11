@@ -111,9 +111,9 @@ public class RouteDaoImpl implements Serializable {
 
     public List<SelectItem> getRouteID() {
         List<SelectItem> list = new ArrayList<>();
-        getAllRoute().stream().forEach((catt) -> {
+        for (Route catt : getAllRoute()){
             list.add(new SelectItem(catt.getRoute_id(), catt.getRoute_name()));
-        });
+        };
         return list;
     }
 

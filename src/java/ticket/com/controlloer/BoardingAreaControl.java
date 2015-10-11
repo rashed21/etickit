@@ -5,6 +5,7 @@
  */
 package ticket.com.controlloer;
 
+import java.util.List;
 import ticket.com.implDao.BoardingAreaImplDao;
 import ticket.com.pojo.BoardingArea;
 import ticket.com.pojo.Bus_type;
@@ -46,5 +47,7 @@ public class BoardingAreaControl {
     public void insert(){
         boardingAreaImplDao.insert(boardingArea);
     }
-    
+    public List<BoardingArea> getAllBoardingArea() {
+        return boardingAreaImplDao.getAllBoardingArea();
+    }
 }

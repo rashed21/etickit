@@ -23,6 +23,35 @@ public class BusTimeScheduleControl {
     private BusTimeSchedule busTimeSchedule = new BusTimeSchedule();
     int totalSeat;
     private TotalSeat totalSeat1 = new TotalSeat();
+    
+    
+    String []a, b, c;
+
+    public String[] getA() {
+        return a;
+    }
+
+    public void setA(String[] a) {
+        this.a = a;
+    }
+
+    public String[] getB() {
+        return b;
+    }
+
+    public void setB(String[] b) {
+        this.b = b;
+    }
+
+    public String[] getC() {
+        return c;
+    }
+
+    public void setC(String[] c) {
+        this.c = c;
+    }
+
+    
 
     public TotalSeat getTotalSeat1() {
         return totalSeat1;
@@ -132,11 +161,11 @@ public String call(){
 
     private String[] selectedSeats;
     private List<String> seats = new ArrayList<String>();
-    @PostConstruct
+   @PostConstruct
     public void init() {
 
         String seat[] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
-        for (int i = 0; i < totalSeat; i++) {
+        for (int i = 0; i < 10; i++) {
             TotalSeat sname = new TotalSeat();
             for (int j = 1; j < 5; j++) {
                 seats.add(seat[i] + j);
@@ -158,7 +187,7 @@ public String call(){
         List<TotalSeat> allotedSeat = new ArrayList<TotalSeat>();
 
     public List<TotalSeat> getTotalSeatWtihAlloted() {
-         for (int i = 0; i < totalSeat; i++) {
+         for (int i = 0; i < 10; i++) {
            for (int j = 1; j < 5; j++) {
               for(String s:  seats){
         TotalSeat tot=seatlist.get(j);
@@ -233,4 +262,13 @@ public String call(){
         selectedSeats =new String[0];
         totalSeat1=new TotalSeat();
     }
+    
+    
+    
+    public boolean testMe(){
+        System.out.println("Just for test i am here..............."+a[0] +a[1]+a[2]);
+        return false;
+    }
+    
+    
 }

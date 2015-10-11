@@ -54,5 +54,31 @@ private String msg;
      return msg;
  }
    
-   
+ public String register()
+ {
+     
+     if(userInfoImplDao.register(userInfo)){
+       return "registrationSuccess";
+     }else
+     {
+        return "registrationFail";
+     }
+    
+ }
+ 
+ 
+   public String userLogin(){
+       System.out.println(userInfo.getUname());
+       if(userInfoImplDao.userLogin(userInfo.getUname(), userInfo.getPass()).equals("Please input correct")){
+           
+//         if(userInfoImplDao.userLogin("Jamal", "123").equals("Please input correct")){  
+         return "Please input correct";
+       }else
+       {
+           return "success";
+       }
+      
+       
+       
+   }
 }

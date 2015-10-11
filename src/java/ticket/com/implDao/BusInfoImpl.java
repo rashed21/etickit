@@ -48,7 +48,7 @@ public boolean insert(BusInfo obj) {
         for (BusInfo catt : getAllBus_type()) {
             
             list.add(new SelectItem(catt.getBusId(), catt.getBusName()));        
-       
+            System.out.println("I am in Bus Info............................................");
         }
         return list;
     }

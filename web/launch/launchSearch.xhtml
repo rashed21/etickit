@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Agent | ControllPannel</title>
+
+
+
+    </h:head>
+    <ui:composition template="/Theme/baseTemplate.xhtml">
+        <ui:define name="content">
+            <div class="row">
+                <div class="col-md-3"> <div class="row">
+                        <h:form>            
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Depart From :" />
+                                <p:inputText value="#{launchSalseSeatController.launch_TimeSchedule.departFrom}"/>
+                                <h:outputLabel value="Arrival To :" /> 
+                                <p:inputText value="#{launchSalseSeatController.launch_TimeSchedule.arriveTo}"/>
+
+                            </h:panelGrid>                
+
+                            <p:commandButton value=" Submit" action="launchSearch?faces-redirect=true">
+
+
+                            </p:commandButton>
+                        </h:form> 
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-9">Left Main</div>
+            </div>
+            <div class="row">
+                <h:form>
+                <p:dataTable var="launch" value="#{launchSalseSeatController.search()}">
+
+                    
+                    
+                    
+                     <p:column headerText="">
+                        <h:outputText value="#{launch.launchName}" />
+                    </p:column>
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.departFrom}" />
+                    </p:column>
+
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.arriveTo}" />
+                    </p:column>
+
+                   
+
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.deptTime}" />
+                    </p:column>
+                    <p:column headerText="">
+                        <h:outputText value="#{launch.arrivTime}" />
+                    </p:column>
+                    <p:column headerText="">
+                         <p:commandButton value=" Buy" action="launchSeatSelect?faces-redirect=true">
+                             <f:setPropertyActionListener target="#{launchSalseSeatController.launch_TimeSchedule.launchTimeId}" value="#{launch.launchTimeId}"/>
+           
+                        </p:commandButton>
+                    </p:column>
+                </p:dataTable>   
+            </h:form>
+            </div>
+
+
+        </ui:define>
+        
+    </ui:composition>
+</html>
+

@@ -15,7 +15,9 @@ public class BoardingArea {
 
     public int bo_area_id;
     public int bus_time_id;
-    public Date bo_area_time;
+    public String bo_area_time;
+    public String place;
+    public String board_bus_name;
 
     public BoardingArea() {
     }
@@ -36,12 +38,28 @@ public class BoardingArea {
         this.bus_time_id = bus_time_id;
     }
 
-    public Date getBo_area_time() {
+    public String getBo_area_time() {
         return bo_area_time;
     }
 
-    public void setBo_area_time(Date bo_area_time) {
+    public void setBo_area_time(String bo_area_time) {
         this.bo_area_time = bo_area_time;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getBoard_bus_name() {
+        return board_bus_name;
+    }
+
+    public void setBoard_bus_name(String board_bus_name) {
+        this.board_bus_name = board_bus_name;
     }
 
 

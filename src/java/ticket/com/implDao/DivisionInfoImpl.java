@@ -9,9 +9,12 @@ import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
@@ -50,7 +53,13 @@ public class DivisionInfoImpl {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        } finally{
+            try {
+                DBConnectionHandler.getConnection().close();
+            } catch (SQLException ex) {
+                Logger.getLogger(DivisionInfoImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
 
         return returnValue;
 
@@ -79,6 +88,14 @@ public class DivisionInfoImpl {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }finally{
+             
+            try {
+                DBConnectionHandler.getConnection().close();
+            } catch (SQLException ex) {
+                Logger.getLogger(DivisionInfoImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    
         }
 
         return data;
@@ -99,5 +116,23 @@ public class DivisionInfoImpl {
     }
 
    
+    public boolean delete(int id)  {     
+          String sql = "DELETE FROM divisioninfo WHERE div_id=?;";  
+    try {
+      PreparedStatement ps = DBConnectionHandler.getConnection().prepareStatement(sql);
+      ps.setInt(1, id);
+     
+      int i = ps.executeUpdate();
+    } catch (SQLException ex) {
+     
+    } finally{
+              try {
+                  DBConnectionHandler.getConnection().close();
+              } catch (SQLException ex) {
+                  Logger.getLogger(DivisionInfoImpl.class.getName()).log(Level.SEVERE, null, ex);
+              }
+    }        
+      return true;
+     }
     
 }

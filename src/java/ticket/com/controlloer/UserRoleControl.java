@@ -37,9 +37,16 @@ public class UserRoleControl {
     public void insert(){
        userRoleDaoImpl.insert(userRole);
     }
+    
+    
+    
       public List<UserRole> getAllUserRole(){
   
+          
+          
   return userRoleDaoImpl.getAllUserRole();
+  
+  
   }  
     
    public void delete(int i){

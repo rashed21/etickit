@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.model.SelectItem;
 import ticket.com.connection.DBConnectionHandler;
 import ticket.com.pojo.UserRole;
@@ -33,7 +35,13 @@ public class UserRoleDaoImpl implements Serializable{
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        } finally{
+            try {
+                DBConnectionHandler.getConnection().close();
+            } catch (SQLException ex) {
+                Logger.getLogger(UserRoleDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
 
         return true;
 
@@ -50,7 +58,13 @@ public class UserRoleDaoImpl implements Serializable{
       int i = ps.executeUpdate();
     } catch (SQLException ex) {
      
-    } 
+    }  finally{
+              try {
+                  DBConnectionHandler.getConnection().close();
+              } catch (SQLException ex) {
+                  Logger.getLogger(UserRoleDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+              }
+    }
         
       return true;
      }
@@ -87,6 +101,12 @@ public class UserRoleDaoImpl implements Serializable{
         list.add(ru);
       }
     } catch (Exception e) {
+    } finally{
+      try {
+          DBConnectionHandler.getConnection().close();
+      } catch (SQLException ex) {
+          Logger.getLogger(UserRoleDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }
   return list;
   }

@@ -1,0 +1,730 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Agent | ControllPannel</title>
+
+
+    </h:head>
+    <ui:composition template="/Theme/baseTemplate.xhtml">
+        <ui:define name="content_left">
+
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Agent Info
+                            </a>
+
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-primary btn-xs  btn-block"  data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Agent Sate
+                            </button> 
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Activity
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Details
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Bus Details
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" id="bus_route_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Route 
+                            </button> 
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" id="bus_route_details_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Route Details
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" id="bus_boarding_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Boarding Time
+                            </button>                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Launch Details
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Agent Sate
+                            </button> 
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Activity
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Details
+                            </button>                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Address
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-primary btn-xs  btn-block"  id="division_div_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Division
+                            </button> 
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" id="district_div_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                District
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" id="upazila_div_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Upazila
+                            </button>  
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" id="union_div_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Union
+                            </button>                       
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Panel
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" id="user_role_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                User Role
+                            </button> 
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" id="module_button" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Module
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-xs  btn-block" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Details
+                            </button>                       
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </ui:define>
+
+
+
+        <ui:define name="content_main">
+
+
+
+            <div class="show" id="user_role_div">
+                <center>  <h1><small>User Role</small></h1></center>
+
+                <div class="row">
+                    <h:form> 
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">User Role </label>
+                            <div class="col-sm-4">
+                                <p:inputText value="#{userRoleControl.userRole.roleName}" class="form-control "/>
+                            </div>
+                            <div class="col-sm-2">
+                                <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{userRoleControl.insert()}" />
+                            </div>
+                        </div>
+
+
+
+
+                    </h:form>
+
+                </div>
+                <br/>
+                <h:form>
+
+                    <p:dataTable var="role" value="#{userRoleControl.allUserRole}">
+                        <p:column headerText="Type Id">
+                            <h:outputText value="#{role.roleId}" />
+                        </p:column>
+
+                        <p:column headerText="Type Name">
+                            <h:outputText value="#{role.roleName}" />
+                        </p:column>
+                        <p:column headerText="Delete">
+                            <h:commandButton value="Delete" action="#{userRoleControl.delete(role.roleId)}" >                   
+                            </h:commandButton>
+                        </p:column>
+
+                    </p:dataTable> 
+                </h:form>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--module div-->    
+
+
+
+
+
+
+            <div class="hidden" id="module_div">
+                <center>  <h1><small>Module</small></h1></center>
+
+                <div class="row">
+                    <h:form>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">Module Name</label>
+                            <div class="col-sm-4">
+                                <p:inputText value="#{userModuleController.userModule.moduleDetail}" class="form-control "/>
+                            </div>
+                            <div class="col-sm-2">
+                                <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{userModuleController.insert()}" />
+                            </div>
+                        </div>              
+                    </h:form>
+
+                </div>
+
+
+
+                <br/>
+                <h:form>
+
+                    <p:dataTable var="userModule" value="#{userModuleController.allUserModule}" >
+                        <p:column headerText="Moudle Id">
+                            <h:outputText value="#{userModule.moduleId}" />
+                        </p:column>
+
+                        <p:column headerText="Moudle Name">
+                            <h:outputText value="#{userModule.moduleDetail}" />
+                        </p:column>
+
+                        <p:column headerText="Delete">
+                            <h:commandButton value="Delete" action="#{userModuleController.delete(userModule.moduleId)}" >              
+                            </h:commandButton>
+                        </p:column>
+                    </p:dataTable> 
+                </h:form>
+            </div>
+
+
+
+            <!--///Addresssssssssssssssssssssssssssssssssssssss  form-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="hidden" id="division_div">
+                <center>  <h1><small>Division</small></h1></center>
+
+                <div class="row">
+                    <h:form>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">Division Name</label>
+                            <div class="col-sm-4">
+                                <p:inputText value="#{divisionInfoBean.divisioninfo.divName}" class="form-control "/>
+                            </div>
+                            <div class="col-sm-2">
+                                <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{divisionInfoBean.insertDivision()}" />
+                            </div>
+                        </div>              
+                    </h:form>
+
+                </div>
+
+
+
+                <br/>
+                <h:form>
+
+                    <p:dataTable var="division" value="#{divisionInfoBean.divisionInfo}">
+                        <p:column headerText="Type Id">
+                            <h:outputText value="#{division.divId}" />
+                        </p:column>
+
+                        <p:column headerText="Type Name">
+                            <h:outputText value="#{division.divName}" />
+                        </p:column>
+                        <p:column headerText="Delete">
+                            <h:commandButton value="Delete" action="#{divisionInfoBean.delete(division.divId)}" >                   
+                            </h:commandButton>
+                        </p:column>
+
+                    </p:dataTable> 
+                </h:form>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="hidden" id="district_div">
+                <center>  <h1><small>District Info</small></h1></center>
+
+
+                <h:form>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">Division Name</label>
+                            <div class="col-sm-4">
+                                <h:selectOneMenu value="#{districtInfoBean.disinfo.divId}"  class="form-control">
+                                    <f:selectItems value="#{districtInfoBean.divisionInfoList}"></f:selectItems>
+                                </h:selectOneMenu>  </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">District Name</label>
+                            <div class="col-sm-4">
+                                <h:inputText value="#{districtInfoBean.disinfo.disName}" class="form-control "/>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-offset-2 col-sm-4">
+                                <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{districtInfoBean.insertDistrict()}" />
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+
+
+
+
+
+                <br/>
+                <h:form>
+
+                    <p:dataTable var="dis" value="#{districtInfoBean.disImpl.districtInfo}">
+                        <p:column headerText="Company Id">
+                            <h:outputText value="#{dis.disId}" />
+                        </p:column>
+
+                        <p:column headerText="Division Name">
+                            <h:outputText value="#{dis.divId}" />
+                        </p:column>
+
+                        <p:column headerText="District Name ">
+                            <h:outputText value="#{dis.disName}" />
+                        </p:column>
+
+                    </p:dataTable> 
+                </h:form>
+            </div> 
+
+            <!--Upazila 000000000000000000000000000000000000000000000000000000000000000000              info--> 
+
+            <div class="hidden" id="upazila_div">
+                <center>  <h1><small>Upazila Info</small></h1></center>
+
+
+                <h:form>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">Select Division</label>
+                            <div class="col-sm-4">
+                                <h:selectOneMenu value="#{districtInfoBean.disinfo.divId}"  class="form-control">
+                                    <f:selectItems value="#{districtInfoBean.divisionInfoList}"></f:selectItems>
+                                </h:selectOneMenu>  </div>
+                        </div> 
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">Select Upazila </label>
+                            <div class="col-sm-4">
+                                <h:selectOneMenu value="#{upazilaInfoBean.u.disId}"  class="form-control">
+                                    <f:selectItems value="#{upazilaInfoBean.districtInfoList}"></f:selectItems>
+                                </h:selectOneMenu>  </div>
+                        </div> 
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">Upazila Name</label>
+                            <div class="col-sm-4">
+                                <h:inputText value="#{upazilaInfoBean.u.uzname}" class="form-control "/>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-offset-2 col-sm-4">
+                                <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{upazilaInfoBean.insertUpazila()}" />
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+
+
+
+
+
+                <br/>
+                <h:form>
+
+                    <p:dataTable var="car" value="#{upazilaInfoBean.uii.upazilaInfo}">
+                        <p:column headerText="Upazila Id">
+                            <h:outputText value="#{car.uzid}" />
+                        </p:column>
+
+                        <p:column headerText="District Id">
+                            <h:outputText value="#{car.disId}" />
+                        </p:column>
+
+                        <p:column headerText="UpaZila">
+                            <h:outputText value="#{car.uzname}" />
+                        </p:column>
+
+
+                    </p:dataTable> 
+                </h:form>
+            </div>
+
+
+            <!--Union 000000000000000000000000000000000000000000000000000000000000000000              info--> 
+
+            <div class="hidden" id="union_div">
+                <center>  <h1><small>Union Info</small></h1></center>
+
+
+                <h:form>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">Select Division</label>
+                            <div class="col-sm-4">
+                                <h:selectOneMenu value="#{districtInfoBean.disinfo.divId}"  class="form-control">
+                                    <f:selectItems value="#{districtInfoBean.divisionInfoList}"></f:selectItems>
+                                </h:selectOneMenu>  </div>
+                        </div> 
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">Select District </label>
+                            <div class="col-sm-4">
+                                <h:selectOneMenu value="#{upazilaInfoBean.u.disId}"  class="form-control">
+                                    <f:selectItems value="#{upazilaInfoBean.districtInfoList}"></f:selectItems>
+                                </h:selectOneMenu>  </div>
+                        </div> 
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">Select Upazila </label>
+                            <div class="col-sm-4">
+                                <h:selectOneMenu value="#{unionInfoBean.u.uzid}"  class="form-control">
+                                    <f:selectItems value="#{unionInfoBean.upazilaInfoList}"></f:selectItems>
+                                </h:selectOneMenu>  </div>
+                        </div> 
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label  class="col-sm-2 control-label">Union Name</label>
+                            <div class="col-sm-4">
+                                <h:inputText value="#{upazilaInfoBean.u.uzname}" class="form-control "/>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-offset-2 col-sm-4">
+                                <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{unionInfoBean.insertUnion()}"/>
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+
+
+
+
+
+                <br/>
+                <h:form>
+
+                    <p:dataTable var="car" value="#{unionInfoBean.uii.unionInfo}">
+                        <p:column headerText="Union Id">
+                            <h:outputText value="#{car.upId}" />
+                        </p:column>
+
+                        <p:column headerText="Company Name">
+                            <h:outputText value="#{car.upname}" />
+                        </p:column>
+
+
+                    </p:dataTable> 
+                </h:form>
+            </div>
+
+
+
+
+
+
+
+            <!--bus info is details bus info is details bus info is details bus info is details bus info is details 
+           
+            bus info is details bus info is details bus info is details bus info is details bus info is details 
+            
+            bus info is details bus info is details bus info is details bus info is details bus info is details bus info is details 
+            
+            
+            bus info is details bus info is details bus info is details bus info is details bus info is details bus info is details 
+            
+            bus info is details bus info is details bus info is details bus info is details 
+            
+            bus info is details bus info is details bus info is details bus info is details bus info is details 
+            
+            s parts-->     
+
+            <div class="hidden" id="bus_route_div">
+                <center>  <h1><small>Route Name</small></h1></center>
+
+                <div class="row">
+                    <h:form>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">Route Name</label>
+                            <div class="col-sm-4">
+                                <p:inputText value="#{routeCRUD.route.route_name}" class="form-control "/>
+                            </div>
+                            <div class="col-sm-2">
+                                <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{routeCRUD.insert()}" />
+                            </div>
+                        </div>              
+                    </h:form>
+
+                </div>
+
+
+
+                <br/>
+                <h:form>
+
+                    <p:dataTable var="route" value="#{routeCRUD.allRoute}">
+                        <p:column headerText="Route Id">
+                            <h:outputText value="#{route.route_id}" />
+                        </p:column>
+
+                        <p:column headerText="Route Name">
+                            <h:outputText value="#{route.route_name}" />
+                        </p:column>
+
+                        <p:column headerText="Status ">
+                            <c:choose>
+                                <c:when test="#{route.status.equalsIgnoreCase('A')}">
+                                    <h:outputLabel value="Inactive"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <h:outputLabel value="Active"/>
+                                </c:otherwise>
+                            </c:choose>   
+                        </p:column>
+
+                        <p:column headerText="Delete">
+                            <h:commandButton value="Delete" action="#{routeCRUD.delete(route.route_id)}" >
+
+
+                            </h:commandButton>
+                        </p:column>
+
+
+                        <p:column headerText="Edit">
+                            <p:commandButton value="Update" type="button" onclick="PF('dlg3').show();" />
+
+
+                        </p:column>
+
+
+                    </p:dataTable> 
+                </h:form>
+            </div>  
+
+
+
+
+
+
+
+            <div class="hidden" id="bus_route_details_div">
+                <center>  <h1><small>Route Details </small></h1></center>
+
+                <div class="row">
+                    <h:form>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">Route Name</label>
+                            <div class="col-sm-4">
+                                <p:inputText value="#{route_DetailsCRUD.route_Details.route_del_name}" class="form-control "/>
+                            </div>
+                            <div class="col-sm-2">
+                                <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{route_DetailsCRUD.insert()}" />
+                            </div>
+                        </div>              
+                    </h:form>
+
+                </div>
+
+
+
+                <br/>
+                <h:form>
+
+                    <p:dataTable var="r_detail" value="#{route_DetailsCRUD.allRoute_Details}">
+                        <p:column headerText="Type Id">
+                            <h:outputText value="#{r_detail.route_del_id}" />
+                        </p:column>
+
+                        <p:column headerText="Type Name">
+                            <h:outputText value="#{r_detail.route_del_name}" />
+                        </p:column>
+
+
+
+                        <p:column headerText="Delete">
+                            <h:commandButton value="Delete" action="#{route_DetailsCRUD.delete(r_detail.route_del_id)}" >
+
+
+                            </h:commandButton>
+                        </p:column>
+
+                    </p:dataTable> 
+                </h:form>
+            </div> 
+
+
+            <div class="hidden" id="bus_boarding_div">
+                <center>  <h1><small>Boarding Area</small></h1></center>
+
+               
+                    <h:form>
+                        <div class="form-group">
+                             <div class="row">
+                            <label  class="col-sm-2 control-label">Boarding Place </label>
+                            <div class="col-sm-4">
+                                <p:inputText value="#{boardingAreaControl.boardingArea.place}" class="form-control "/>
+                            </div>
+                        </div> 
+                             </div>
+                         <div class="form-group">
+                             <div class="row">
+                            <label  class="col-sm-2 control-label">Boarding Time </label>
+                            <div class="col-sm-4">
+                                <p:inputText value="#{boardingAreaControl.boardingArea.bo_area_time}" class="form-control "/>
+                            </div>
+                        </div> 
+                             </div>
+                          <div class="form-group">
+                             <div class="row">
+                            <label  class="col-sm-2 control-label">Bus Time Id </label>
+                            <div class="col-sm-4">
+                                <p:inputText value="#{boardingAreaControl.boardingArea.bus_time_id}" class="form-control "/>
+                            </div>
+                        </div> 
+                             </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-offset-2 col-sm-4">
+                                    <h:commandButton value="Add Type"  class="btn btn-primary   btn-block" action="#{boardingAreaControl.insert()}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </h:form>
+
+               
+
+
+
+                <br/>
+                
+                 <h:form>
+
+                     <p:dataTable var="board" value="#{boardingAreaControl.allBoardingArea}">
+                        <p:column headerText="Bus Time Id">
+                            <h:outputText value="#{board.bus_time_id}" />
+                        </p:column>
+
+                        <p:column headerText="Bus Name">
+                            <h:outputText value="#{board.board_bus_name}" />
+                        </p:column>
+
+                        <p:column headerText="Boarding Time">
+                            <h:outputText value="#{board.bo_area_time}" />
+                        </p:column>
+
+                        
+
+                    </p:dataTable> 
+                </h:form>
+                
+                
+            </div> 
+        </ui:define>
+    </ui:composition>
+</html>
+

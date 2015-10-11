@@ -54,6 +54,35 @@ public class UserInfoImplDao {
 
     }
 
+    public boolean register(UserInfo obj) {
+        String sql = "insert into user_info(uname,pass,mobile_no,address,p_address,reg_date,email,name,gender) values (?,?,?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement ps = DBConnectionHandler.getConnection().prepareStatement(sql);
+            ps.setString(1, obj.getUname());
+            ps.setString(2, obj.getPass());
+            ps.setString(3, obj.getMobileNo());
+            ps.setInt(4, obj.getAddressId());
+            ps.setString(5, obj.getPresentAddress());
+
+            SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+
+            ps.setString(6, "" + format.format(new Date()));
+
+            ps.setString(7, obj.getEmail());
+            ps.setString(8, obj.getName());
+
+            ps.setString(9, obj.getGender());
+
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return true;
+
+    }
+
     public boolean delete(int id) {
 
         String sql = "DELETE FROM user_info WHERE user_id=?;";
@@ -95,30 +124,50 @@ public class UserInfoImplDao {
         return list;
     }
 
-  //user name check for unique
+    //user name check for unique
     public String UserNamecheck(UserInfo userInfo) {
-      
-        String msg=null;
-        String sql = "SELECT * FROM user_info where uname='"+userInfo.getUname()+"';";
+
+        String msg = null;
+        String sql = "SELECT * FROM user_info where uname='" + userInfo.getUname() + "';";
         try {
             Statement st = DBConnectionHandler.getConnection().createStatement();
             System.out.println("Before if");
-             ResultSet rs = st.executeQuery(sql);
-             
-             if(rs.relative(1)){
-                 msg="User Name already exist";
-             }else{
-            msg="";
+            ResultSet rs = st.executeQuery(sql);
 
-             }
-     
+            if (rs.relative(1)) {
+                msg = "User Name already exist";
+            } else {
+                msg = "";
+
+            }
+
         } catch (Exception e) {
         }
         return msg;
     }
 
-    
-    
-    
-    
+    public String userLogin(String name, String pass) {
+
+        String msg = null;
+        String sql = "SELECT * FROM user_info where uname='" + name + "' and pass='" + pass + "';";
+        try {
+
+            System.out.println(name + "    " + pass);
+
+            Statement st = DBConnectionHandler.getConnection().createStatement();
+            System.out.println("Before if");
+            ResultSet rs = st.executeQuery(sql);
+
+            if (rs.relative(1)) {
+                msg = "Congratulation " + name;
+            } else {
+                msg = "Please input correct";
+
+            }
+
+        } catch (Exception e) {
+        }
+        return msg;
+    }
+
 }
